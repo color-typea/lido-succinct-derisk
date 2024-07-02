@@ -1,0 +1,28 @@
+[workspace]
+[package]
+version = "0.1.0"
+name = "lido-derisk-script-utils"
+edition = "2021"
+
+[[bin]]
+name = "proof_downloader"
+path = "src/bin/proof_downloader.rs"
+
+[dependencies]
+sp1-sdk = { git = "https://github.com/succinctlabs/sp1.git", tag="v1.0.8-testnet" }
+serde_json = { version = "1.0", default-features = false, features = ["alloc"] }
+serde = { version = "1.0", default-features = false, features = ["derive"] }
+clap = { version = "4.0", features = ["derive", "env"] }
+alloy-sol-types = "0.7.2"
+hex-literal = "0.4.1"
+hex = "0.4"
+log = "0.4.21"
+ethereum_ssz = "0.5.4"
+futures = "0.3"
+
+tokio = { version = "1", features = ["full"] }
+
+[build-dependencies]
+sp1-helper = { git = "https://github.com/succinctlabs/sp1.git", tag="v1.0.5-testnet"  }
+
+

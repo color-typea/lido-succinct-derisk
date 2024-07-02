@@ -1,0 +1,23 @@
+[workspace]
+[package]
+version = "0.1.0"
+name = "lido-derisk-script-validators-ssz-merkle"
+edition = "2021"
+
+[dependencies]
+sp1-zkvm = { git = "https://github.com/succinctlabs/sp1.git", tag="v1.0.5-testnet"  }
+sp1-derive = { git = "https://github.com/succinctlabs/sp1.git" }
+alloy-sol-types = "0.7.2"
+tiny-keccak = { version = "2.0", features = ["keccak"] }
+sha2 = "=0.10.8"
+log = "0.4.21"
+serde = { version = "1.0.203", features = ["derive"] }
+ethereum_ssz = "0.5.4"
+ethereum_ssz_derive = "0.5.4"
+ethereum_serde_utils = "0.5.2"
+ethereum-types = "0.14.1"
+
+lido_derisk_lib = { path = "../shared" }
+
+[patch.crates-io]
+sha2-v0-10-8 = { git = "https://github.com/sp1-patches/RustCrypto-hashes", package = "sha2", branch = "patch-v0.10.8" }
